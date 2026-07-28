@@ -1,0 +1,41 @@
+[package]
+name = "rs-i2hex4wasm"
+version = "0.1.0"
+edition = "2024"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+unwrap_used = "forbid"
+expect_used = "forbid"
+panic = "forbid"
+
+[[bin]]
+name = "i2hex4wasm_example"
+
+[dependencies.wasmtime]
+version = "46"
+default-features = false
+features = [
+  "wat",
+  "runtime",
+  "cranelift",
+]
+
+[dependencies.serde_json]
+version = "1"
+optional = true
+default-features = false
+features = [
+  "std",
+]
+
+[features]
+default = [
+  "i2hex4wasm_example",
+]
+
+i2hex4wasm_example = [
+  "serde_json",
+]

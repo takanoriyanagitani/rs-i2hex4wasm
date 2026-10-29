@@ -15,7 +15,7 @@ panic = "forbid"
 name = "i2hex4wasm_example"
 
 [dependencies.wasmtime]
-version = "46"
+version = "48"
 default-features = false
 features = [
   "wat",
